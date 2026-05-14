@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глеб Яценко | Backend Developer (.NET/C#)</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Современная темная палитра (Slate/Blue) */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        /* Кастомные стили поверх Bootstrap */
+        .text-accent {
+            color: var(--accent) !important;
+        }
+
+        .text-muted-custom {
+            color: var(--text-muted) !important;
+        }
+
+        .border-custom {
+            border-color: var(--border-color) !important;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            background: var(--border-color);
+            flex-grow: 1;
+        }
+
+        /* Шапка и фото */
+        header {
+            padding: 60px 0 40px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Контакты */
+        .contact-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Навыки */
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--accent);
+        }
+
+        /* Опыт работы */
+        .experience-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-3px);
+            border-color: #475569;
+        }
+
+        .experience-card ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .experience-card li {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .experience-card li::marker {
+            color: var(--accent);
+        }
+
+        /* Сертификаты */
+        .cert-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* РАМКА ДЛЯ ИЗОБРАЖЕНИЙ: фикс масштабирования */
+        .cert-img-wrapper {
+            width: 100%;
+            height: 200px;
+            /* Фиксированная высота рамки */
+            background-color: #0b1120;
+            /* Более темный фон для пустых краев */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .cert-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Изображение вписывается целиком, без обрезки */
+        }
+
+        .cert-info {
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="max-width: 1000px;">
+
+        <header>
+            <div class="row align-items-center text-center text-md-start gap-4 gap-md-0">
+                <div class="col-md-3 d-flex justify-content-center">
+                    <img src="/me.png" alt="Глеб Яценко" class="profile-img">
+                </div>
+                <div class="col-md-9">
+                    <h1 class="fw-bold mb-1">Глеб Яценко</h1>
+                    <p class="fs-4 text-accent fw-semibold mb-3">Backend Developer (.NET/C#)</p>
+
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mt-2">
+                        <a href="https://t.me/NovaCript" class="contact-link"><i class="fa-brands fa-telegram fs-5"></i>
+                            Telegram</a>
+                        <a href="https://github.com/NovaCript" class="contact-link"><i
+                                class="fa-brands fa-github fs-5"></i> GitHub</a>
+                        <a href="mailto:novacript.dev@gmail.com" class="contact-link"><i
+                                class="fa-solid fa-envelope fs-5"></i> Email</a>
+                        <a href="https://linkedin.com/in/novacript" class="contact-link"><i
+                                class="fa-brands fa-linkedin fs-5"></i> LinkedIn</a>
+                        <a href="https://stepik.org/users/656103359/profile" class="contact-link"><i
+                                class="fa-solid fa-graduation-cap fs-5"></i> Stepik</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="mb-5">
+            <h2 class="section-title"><i class="fa-solid fa-user-astronaut text-accent"></i> О себе</h2>
+            <p class="fs-5 text-muted-custom">
+                Backend-разработчик с опытом перехода из Python-экосистемы (FastAPI, Django) в стек .NET.
+                Специализируюсь на создании масштабируемых систем, используя Clean Architecture и паттерн CQRS.
+                Имею опыт работы с реляционными базами данных. В работе использую Docker для контейнеризации и
+                оптимизации процессов разработки и развертывания.
+                Стремлюсь к постоянному развитию, активно изучаю новые технологии и практики в области
+                backend-разработки.
+            </p>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group text-accent"></i> Навыки</h2>
+            <div class="d-flex flex-wrap gap-2">
+                <div class="skill-badge">C# / .NET 9</div>
+                <div class="skill-badge">ASP.NET Core</div>
+                <div class="skill-badge">EF Core</div>
+                <div class="skill-badge">CQRS / MediatR</div>
+                <div class="skill-badge">PostgreSQL</div>
+                <div class="skill-badge">RabbitMQ</div>
+                <div class="skill-badge">Redis</div>
+                <div class="skill-badge">Docker</div>
+                <div class="skill-badge">GitFlow</div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-5">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase text-accent"></i> Опыт работы</h2>
+
+            <div class="experience-card">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-2">
+                    <h4 class="fw-bold mb-0 text-main">Backend Developer (.NET/C#)</h4>
+                    <span class="badge bg-secondary text-light fs-6 mt-2 mt-md-0 px-3 py-2">Январь 2026 — Наст.
+                        время</span>
+                </div>
+                <h5 class="text-accent mb-3">Freelance</h5>
+                <ul>
+                    <li>Реализовал Clean Architecture и CQRS (.NET 9, MediatR), разделив ответственность между слоями.
+                    </li>
+                    <li>Организовал структуру хранения данных, внедрив паттерн Repository и Unit of Work.</li>
+                    <li>Провел рефакторинг «толстых» контроллеров, внедрив иерархию исключений и C# records.</li>
+                    <li>Автоматизировал документацию API через Swagger и добавил валидацию (FluentValidation).</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-2">
+                    <h4 class="fw-bold mb-0 text-main">Backend Developer Python</h4>
+                    <span class="badge bg-secondary text-light fs-6 mt-2 mt-md-0 px-3 py-2">Сентябрь 2023 — Ноябрь
+                        2025</span>
+                </div>
+                <h5 class="text-accent mb-3">Project Work / Startups (Evoll, Froot, MeetMap)</h5>
+                <ul>
+                    <li>Ускорил запуск MVP на 30% за счет проектирования расширяемых схем БД (FastAPI).</li>
+                    <li>Сократил время онбординга новых разработчиков в 2 раза через менторство и Code Review.</li>
+                    <li>Снизил время отклика API на 40% с помощью кэширования в Redis.</li>
+                    <li>Внедрил контейнеризацию (Docker), ускорив развертывание сервисов на 50%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certificates" class="mb-5">
+            <h2 class="section-title"><i class="fa-solid fa-award text-accent"></i> Сертификаты</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/cert_microservices.png" alt="Microservices & Clean Arch">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">Microservices & Clean Arch</h6>
+                            <small class="text-muted-custom">Stepik, 2026</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/cert_bootcamp.png" alt="Fundamentals of Programming">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">Fundamentals of Programming</h6>
+                            <small class="text-muted-custom">Stepik, 2026</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/sql_db.png" alt="SQL и базы данных">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">SQL и базы данных</h6>
+                            <small class="text-muted-custom">ProductStar, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/devops.png" alt="DevOps Специализация">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">DevOps Специализация</h6>
+                            <small class="text-muted-custom">ProductStar, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/fullstack_fe.png" alt="Fullstack Frontend">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">Fullstack Frontend</h6>
+                            <small class="text-muted-custom">ProductStar, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="/certificates/oop_python.png" alt="ООП в Python">
+                        </div>
+                        <div class="cert-info">
+                            <h6 class="mb-1 text-main">ООП в Python</h6>
+                            <small class="text-muted-custom">ProductStar, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
